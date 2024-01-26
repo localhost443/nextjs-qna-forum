@@ -1,4 +1,3 @@
-"use client";
 import React, { useContext } from "react";
 import { UserButton } from "@clerk/nextjs";
 const Page = () => {

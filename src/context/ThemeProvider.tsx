@@ -8,13 +8,13 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [mode, setMode] = useState("");
+  const [mode, setMode] = useState("dark");
   useEffect(() => {
     const handleThemeChange = () => {
       if (mode === "light") {
-        document.documentElement.classList.add("dark");
-      } else {
         document.documentElement.classList.add("light");
+      } else {
+        document.documentElement.classList.add("dark");
       }
     };
     handleThemeChange();
