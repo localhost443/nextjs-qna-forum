@@ -13,7 +13,8 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     const handleThemeChange = () => {
       if (mode === "light") {
         document.documentElement.classList.add("light");
-      } else {
+      }
+      if(mode === "dark") {
         document.documentElement.classList.add("dark");
       }
     };
