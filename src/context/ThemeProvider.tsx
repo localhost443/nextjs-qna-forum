@@ -1,4 +1,4 @@
-"use client";
+"use client"
 interface ThemeContextType {
   mode: string;
   setMode: (mode: string) => void;
@@ -13,13 +13,19 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     const handleThemeChange = () => {
       if (mode === "light") {
         document.documentElement.classList.add("light");
+        document.documentElement.classList.remove("dark");
       }
       if(mode === "dark") {
         document.documentElement.classList.add("dark");
+        document.documentElement.classList.remove("light");
       }
     };
     handleThemeChange();
   }, [mode]);
+  useEffect(() => {
+    const theme = localStorage.getItem("theme");
+    if(theme === "light" || theme === "dark") setMode(theme)
+  }, []);
   return (
     <ThemeContext.Provider value={{ mode, setMode }}>
       {children}
