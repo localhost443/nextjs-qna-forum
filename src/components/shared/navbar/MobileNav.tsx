@@ -22,7 +22,6 @@ const NavContent = () => {
     <section className="flex h-full flex-col gap-6 pt-16">
       {sidebarLinks.map( (item ) => {
         const isActive = pathmane.includes(item.route) && item.route.length > 1 || pathmane === item.route
-        // const isActive = item.route === route;
         return (
           <SheetClose key={item.route} asChild>
             <Link

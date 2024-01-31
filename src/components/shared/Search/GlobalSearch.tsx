@@ -1,3 +1,4 @@
+"use client"
 import React from 'react';
 import Image from "next/image";
 import {Input} from "@/components/ui/input";
@@ -8,7 +9,7 @@ const GlobalSearch = () => {
         <Image
           className={"invert-colors cursor-pointer"}
           src={"./assets/icons/search.svg"}
-          width={25}
+          width={24}
           height={24}
           alt={"searchMe"}
         />
@@ -16,7 +17,8 @@ const GlobalSearch = () => {
           className={"paragraph-regular outline-none no-focus text-dark-400 background-light800_darkgradient border-none shadow-none "}
           type={"text"}
           placeholder={"Search"}
-          value={""}
+          // value={""}
+          onChange = {(e) => console.log(e.target.value)}
         />
       </div>
     </div>
